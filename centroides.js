@@ -1,7 +1,7 @@
 function calculateDistanceCentroids(){
     if (drawnLayers && drawnLayers.length > 0) { //verificar que hayan más de dos geometrias
         let centroides = [];
-
+    }
         drawnLayers.forEach((layer, index) => {
             // Convierte la capa de Leaflet a GeoJSON
             let geojson = layer.toGeoJSON();
@@ -41,6 +41,7 @@ function calculateDistanceCentroids(){
         } else {
             console.warn("No hay suficientes centroides para calcular distancias.");
         }        
-    } else {
+    }
+    else {
         console.warn("No se encontraron objetos en drawLayers.");
     }

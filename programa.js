@@ -19,6 +19,21 @@ async function loadPolygon(){
         }
 
 loadPolygon();
+//CARGAR LOS ARBOLES
+async function loadPolygon(){
+       let myData = await fetch('arboles_gaitana.geojson'); //toma un fragmento 
+       let myPolygon = await myData.json();
+
+        L.geoJSON(myPolygon,
+            {
+                style:{
+                    color:'green'
+            }
+            } 
+        ).addTo(map);
+        }
+
+loadPolygon();
 
 let btnTrees = document.getElementById("btnTrees");
 btnTrees.addEventListener('click', ()=> alert('Hola'));
