@@ -33,3 +33,11 @@ descargar los datos filtrados desdela api, sericio rest
 
 # problema
 buscar la interseccion entre los arboles y bbox
+
+# problema 10
+buscarla informacion de los incidentes del barrio 
+solucion https://datosabiertos.bogota.gov.co/dataset?_res_format_limit=0&res_format=GEOJSON&tags=Casos&res_format=DXF&tags=Incidentes&q=secretaria+distrital+de+gobierno
+
+unir los puntos de los incidentes con el poligono del barrio y cargarlo en la carpeta de trabajo, para generar un boton con los incidentes y caergar la informacion de los accidentes del barrio
+
+
