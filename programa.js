@@ -78,21 +78,30 @@ function generatePDF(distances, totalTrees) {
 
     documentPDF.save("La_Gaitana.pdf");
 }
-let btnIncidentes = document.getElementById("btnIncidentes");
-btnTrees.addEventListener('click', async () => {
-    let response = await fetch("incidentes_gaitana.geojson");
-    let datos = await response.json();
 
-    L.geoJSON(datos, {
-        pointToLayer: (feature, latlong) => {
-            return L.circleMarker(latlong, {
-                radius: 10,
-                fillColor: 'red',
-                weight: 1,
-                opacity: 1,
-                fillOpacity: 0.5
-            });
-        }
-    }).addTo(map);
-    console.log("Incidentes cargados correctamente");
-});
+let btnIncidentes = document.getElementById("btnIncidentes");
+btnIncidentes.addEventListener('click', 
+    async function(){
+        let response = await fetch("incidentes_gaitana (1).geojson");
+        let datos = (await response.json());
+        //Agregar la capa al mapa
+        L.geoJSON(
+            datos,
+            {
+                pointToLayer: (feature, latlong)=>{
+
+                    return L.circleMarker(latlong, {
+                        radius:3,
+                        fillColor:'red',
+                        weight:1,
+                        opacity:0,
+                        fillOpacity: 0.5,
+                    })
+
+                }
+            }
+        ).addTo(map);
+
+    }
+    
+)
